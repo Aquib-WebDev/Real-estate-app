@@ -18,6 +18,7 @@ import {
   signoutUserStart,
   signoutUserSuccess,
 } from "../redux/user/userSlice";
+import {Link} from 'react-router-dom';
 
 export default function () {
   const dispatch = useDispatch();
@@ -183,6 +184,9 @@ export default function () {
         >
           {loading ? "Loading..." : "Update"}
         </button>
+        <Link  to = {"/create-listing"} className='text-white bg-green-700 p-3 rounded-lg uppercase text-center hover:opacoty-90'>
+          Create Listing
+        </Link>
       </form>
       <div className="flex justify-between mt-5">
         <span onClick={handleDelete} className="text-red-700 cursor-pointer">
