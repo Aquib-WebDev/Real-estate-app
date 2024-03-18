@@ -32,8 +32,7 @@ export default function () {
   const [updateSucess, setUpdateSuccess] = useState(false);
   const [showListingError, setShowListingError] = useState(false);
   const [userListing, setUserListing] = useState([]);
-  console.log(userListing[0]);
-
+  
   useEffect(() => {
     if (file) {
       handleFileUpload(file);
@@ -278,7 +277,7 @@ export default function () {
               >
                 Delete
               </button>
-              <button className="text-green-700 uppercase">Edit</button>
+              <Link to = {`/update-listing/${listing._id}`}><button className="text-green-700 uppercase">Edit</button></Link>
             </div>
           </div>
         ))}
