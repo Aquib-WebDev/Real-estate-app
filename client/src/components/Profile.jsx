@@ -112,8 +112,8 @@ export default function () {
   async function handleSignOut() {
     try {
       dispatch(signoutUserStart());
-      const res = await fetch(`api/user/delete/${currentUser._id}`, {
-        method: "DELETE",
+      const res = await fetch(`api/auth/signout`, {
+        method: "POST",
       });
       const data = await res.json();
       if (data.success === false) {
@@ -135,7 +135,7 @@ export default function () {
         setShowListingError(true);
         return;
       }
-      console.log(data);
+      
       setUserListing(data);
     } catch (error) {
       setShowListingError(true);
